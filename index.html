@@ -30,8 +30,10 @@ layout: default
     </header>
 
     <article class="post-content" itemprop="articleBody">
-      {{ post.content }}
-    </article> <hr />
+      {{ post.excerpt }}
+    </article>
+    <a itemprop="url" href="{{ post.url | prepend: site.baseurl }}">Read More >></a>
+    <hr/>
     
     {% endfor %}
   
