@@ -3,8 +3,8 @@ title: Murmur
 tagline: Murmur
 author: Kuan-Hao Huang
 email: yu@lijiayu.net
-description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
-keywords: "Jekyll, theme, Freshman21"
+description: # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+keywords: 
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "https://khhuang.net/blog" # the base hostname & protocol for your site
 locale: en_US
@@ -13,7 +13,7 @@ locale: en_US
 twitter_username: 
 github_username: 
 disqus_shortname: 
-favicon:     "/images/favicon.ico"
+favicon: 
 aboutme: Hi, this is Lijia Yu. I made the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
 aboutme_photo: https://i.imgur.com/Mdc4szJl.jpg# your photo.
 google_analytics_key: # put YOUR key here to enable tracking! (blank to disable)

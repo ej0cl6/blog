@@ -153,15 +153,15 @@ a {
 
 
 .post-content a{
-  color: $brand-color;    
+  color: $brand-top-color;    
   text-decoration: none;  
   border-bottom: 1px dotted;
   &:visited {             
-    color: darken($brand-color, 25%);
+    color: $brand-top-color;
   }                       
 
   &:hover {               
-    color: $hover-color;
+    color: lighten($brand-top-color, 15%);
     text-decoration: none;
   }  
 
