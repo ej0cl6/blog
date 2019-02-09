@@ -32,7 +32,7 @@ category: Machine Leaning
 GAN設計了兩個neural network: generator和discriminator，並且讓他們互相競爭來達到目的  
 整個GAN的架構如下
 
-![gan](/blog/assets/img/gan.png)
+![gan]({{ site.baseurl }}/assets/img/gan.png)
 
 假設我們現在有一些data $$\{x_1, x_2, ..., x_n\}$$  
 我們的目標是學一個generator $$G$$，這個 $$G$$ 要能將一個任意的random noise $$z$$ 變成新的data  
@@ -63,11 +63,11 @@ $$G$$ 和 $$D$$ 不斷競爭，最後到底誰會贏呢
 第一個是給machine一堆人臉的圖片，要machine畫出新的人臉  
 除了最右邊那欄是真的圖片，其他的都是machine畫出來的，還算逼真吧  
 
-![gan_exp1](/blog/assets/img/gan_exp1.png)
+![gan_exp1]({{ site.baseurl }}/assets/img/gan_exp1.png)
 
 這是要machine畫數字
 
-![gan_exp2](/blog/assets/img/gan_exp2.png)
+![gan_exp2]({{ site.baseurl }}/assets/img/gan_exp2.png)
 
 GAN透過競爭機制，成功得讓machine學會generative model  
 不過這邊有個小問題，在第二個實驗當中，我們給machine的數字有很多種  
@@ -86,7 +86,7 @@ Conditional GAN想要解決的問題是這樣的
 Conditional GAN的架構跟GAN非常類似  
 差別只在於generator和discriminator的input多了label  
 
-![conditional_gan](/blog/assets/img/conditional_gan.png)
+![conditional_gan]({{ site.baseurl }}/assets/img/conditional_gan.png)
 
 在這個架構下，generator會根據不同的label $$y$$ 產生不同的data $$G(z|y)$$  
 而discriminator $$D$$ 預測的機率 $$D(x|y)$$ 則是代表這個 $$x$$ 的label是 $$y$$ 的機率  
@@ -98,7 +98,7 @@ $$\min\limits_{G} \max\limits_{D} V(D,G) = \mathbb{E}_{x_i} \left[\log D(x|y) \r
 
 下圖是要求machine畫各式各樣的0~9  
 
-![conditional_gan_exp](/blog/assets/img/conditional_gan_exp.png)
+![conditional_gan_exp]({{ site.baseurl }}/assets/img/conditional_gan_exp.png)
 
 GAN和Conditional GAN有很多的應用，等我之後看了更多的paper再來介紹給大家  
 

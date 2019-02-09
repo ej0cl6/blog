@@ -28,7 +28,7 @@ category: Math
 <br>
 如下圖，假設將圓圈座位編號0到11，而且主人做在0號的位子<br>
 
-<img src="/blog/assets/img/guest_circle.png" height="300"><br>
+<img src="{{ site.baseurl }}/assets/img/guest_circle.png" height="300"><br>
 
 禮物會從主人手中開始傳，也就是0號位子<br>
 <br>

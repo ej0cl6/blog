@@ -6,7 +6,7 @@ category: Machine Leaning
 ---
 
 今天要來介紹另一種generative model──variational auto-encoder (VAE) [1] 以及他的延伸 conditional variational auto-encoder (Conditional VAE) [2]  
-之前提到的generative adversarial nets (GAN)   是讓discriminator和generator透過互相競爭產生一個足夠好的generator來generate data  
+之前提到的[generative adversarial nets (GAN)]({{ site.baseurl }}{% post_url 2017-06-19-gan-and-conditional-gan %})   是讓discriminator和generator透過互相競爭產生一個足夠好的generator來generate data  
 而VAE則是想透過機率模型模擬出data的distribution  
 新的data可以透過distribution sample得到  
 
@@ -14,7 +14,7 @@ category: Machine Leaning
 
 我們先來看看傳統的auto-encoder吧
 
-![auto_encoder](/blog/assets/img/auto_encoder.png)
+![auto_encoder]({{ site.baseurl }}/assets/img/auto_encoder.png)
 
 傳統的auto-encoder有兩個東西要學──encoder和decoder  
 通常我們用neural network來學encoder和decoder，並希望encoder和decoder滿足一些性質  
@@ -43,7 +43,7 @@ variational auto-encoder (VAE) 剛好可以解決這個問題
 
 這時候我們回來看看剛剛auto-encoder的架構
 
-![prob_auto_encoder](/blog/assets/img/prob_auto_encoder.png)
+![prob_auto_encoder]({{ site.baseurl }}/assets/img/prob_auto_encoder.png)
 
 有了data $$x$$，可以透過 $$P(z|x)$$ 得到 latent vector $$z$$  
 如果我們能用neural network學一個distribution $$Q(z|x) \approx P(z|x)$$，那麼這個network就可以看成是encoder  
@@ -52,16 +52,16 @@ VAE的paper假設我們要學的encoder $$Q(z|x) = \mathcal N (z; \mu, \sigma^2 
 有了這個distribution，我們就可以sample一個可能的的latent vector $$z$$ 並配合neural network學出 $$P(x|z)$$ 當做decoder  
 整個架構會像這樣  
 
-![vae](/blog/assets/img/vae.png)
+![vae]({{ site.baseurl }}/assets/img/vae.png)
 
 在VAE的paper中，是用一個叫做variational inference的方法來學encoder $$Q(z|x)$$  
-由於variational inference的數學式子比較複雜，以後有空再介紹，有興趣的人可以看這裡  
+由於variational inference的數學式子比較複雜，以後有空再介紹，有興趣的人可以看[這裡](http://cpmarkchang.logdown.com/posts/737247-pgm-variational-inference)  
 
 一旦我們有了encoder和decoder，我們便可以從 $$P(z)=\mathcal N (z; 0, I)$$ sample出 $$z$$，再透過decoder產生新的data  
 這樣的機率模型解決了latent space太sparse的問題  
 我們來看看VAE根據不同的 $$z$$ 產生出來的data長怎麼樣  
 
-![vae_exp](/blog/assets/img/vae_exp.png)
+![vae_exp]({{ site.baseurl }}/assets/img/vae_exp.png)
 
 這是VAE從一堆數字圖中所學出來的generative model，的確可以產生出新的數字圖  
 不過和GAN一樣，VAE並沒有辦法指定data的label  
@@ -69,15 +69,15 @@ VAE的paper假設我們要學的encoder $$Q(z|x) = \mathcal N (z; \mu, \sigma^2 
 延伸的方法和Conditional GAN一樣，將encoder和decoder的input多給一個label的資訊  
 架構如下  
 
-![conditional_vae](/blog/assets/img/conditional_vae.png)
+![conditional_vae]({{ site.baseurl }}/assets/img/conditional_vae.png)
 
 如此一來我們就可以指定產生data的label
 
-![conditional_vae_exp1](/blog/assets/img/conditional_vae_exp1.png)
+![conditional_vae_exp1]({{ site.baseurl }}/assets/img/conditional_vae_exp1.png)
 
 在Conditional VAE的paper中還有一個有趣的實驗  
 
-![conditional_vae_exp2](/blog/assets/img/conditional_vae_exp2.png)
+![conditional_vae_exp2]({{ site.baseurl }}/assets/img/conditional_vae_exp2.png)
 
 
 上圖中，最左一欄的數字是真的data  
